@@ -1,5 +1,10 @@
+import os
 import sqlite3
 from datetime import datetime
+
+SHARED_DIR = os.getenv("SHARED_DIR", "/app/shared")
+DB_FILE = os.path.join(SHARED_DIR, "dormitory.db")
+
 
 DB_FILE = "dormitory.db"
 
