@@ -29,10 +29,10 @@ from Database import (
     get_issues_by_type,
 )
 
-API_TOKEN = os.getenv("API_TOKEN")
+API_TOKEN = os.getenv("API_KEY")
 
 if not API_TOKEN:
-    raise ValueError("Не найдена переменная окружения API_TOKEN")
+    raise ValueError("Не найдена переменная окружения API_KEY")
 
 bot = Bot(token=API_TOKEN)
 init_db()
