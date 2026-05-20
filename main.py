@@ -1,8 +1,8 @@
+import os
+import re
 from vkbottle.bot import Bot, Message
 from vkbottle import Keyboard, Text, OpenLink
-import re
 
-from tocken import tocken
 from verification import verify_user, get_user_block
 from Database import (
     init_db,
@@ -29,7 +29,12 @@ from Database import (
     get_issues_by_type,
 )
 
-bot = Bot(token=tocken)
+API_TOKEN = os.getenv("API_TOKEN")
+
+if not API_TOKEN:
+    raise ValueError("Не найдена переменная окружения API_TOKEN")
+
+bot = Bot(token=API_TOKEN)
 init_db()
 
 user_states = {}
