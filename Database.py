@@ -1,10 +1,13 @@
 import os
 from datetime import datetime
-
-import psycopg
-
+import psycopg2 as psycopg
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+
+def get_conn():
+    if not DATABASE_URL:
+        raise RuntimeError("Не задана переменная окружения DATABASE_URL")
+    return psycopg.connect(DATABASE_URL)
 
 
 def get_conn():
