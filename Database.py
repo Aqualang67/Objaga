@@ -2,11 +2,9 @@ import os
 import sqlite3
 from datetime import datetime
 
-
-SHARED_DIR = os.getenv("SHARED_DIR", "/app/shared")
-os.makedirs(SHARED_DIR, exist_ok=True)
-DB_FILE = os.path.join(SHARED_DIR, "dormitory.db")
-
+DATA_DIR = os.getenv("DATA_DIR", "/app/data")
+os.makedirs(DATA_DIR, exist_ok=True)
+DB_FILE = os.path.join(DATA_DIR, "dormitory.db")
 
 def normalize_roles(job_value: str) -> str:
     items = []
