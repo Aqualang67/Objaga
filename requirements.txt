@@ -1,2 +1,2 @@
 vkbottle
-psycopg2-binary
+psycopg
