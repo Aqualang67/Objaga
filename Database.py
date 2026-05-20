@@ -911,7 +911,8 @@ def get_issues_by_type(issue_type: str, limit: int = 20):
     except Exception as e:
         print(f"Ошибка get_issues_by_type: {e}")
         return []
-        def add_myself():
+        
+def add_myself():
     try:
         with get_conn() as conn:
             with conn.cursor() as cursor:
